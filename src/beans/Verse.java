@@ -2,9 +2,13 @@ package beans;
 
 public class Verse {
 
+	// the highest level of where a verse is found
 	private String book;
+	// there are multiple chapters in a book, chapter is where a specific verse can be found
 	private int chapterNumber;
+	// the verse number is what contains the actual text that a verse is made up of 
 	private int verseNumber;
+	// the text that the verse is made up of 
 	private String verse;
 	
 	/**

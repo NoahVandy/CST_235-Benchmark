@@ -38,11 +38,13 @@ public class VerseDataService implements DataAccessInterface<Verse> {
 		String url = "jdbc:mysql://localhost:3306/benchmark_cst-235";
 		String username = "root";
 		String password = "root";
+		//take what is passed in through the method as 'verse' and put it into a sql statement that selects all of the verses that are found within the database
 		String sql = String.format("SELECT * FROM `bible` WHERE `BOOK` = '%s' AND `CHAPTER_NUMBER` = '%d' AND `VERSE_NUMBER` = '%d'", verse.getBook(), verse.getChapterNumber(), verse.getVerseNumber());
 		try 
 		{
 			conn = DriverManager.getConnection(url, username, password);
 			Statement stmt = conn.createStatement();
+			//executeQuery will run the sql statement and make it a ResultSet with the information that it found
 			ResultSet rs = stmt.executeQuery(sql);
 			while(rs.next())
 			{
